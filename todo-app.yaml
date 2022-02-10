@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo
+  namespace: argocd
+spec:
+  destination:
+    namespace: todo
+    server: https://kubernetes.default.svc 
+  project: default 
+  source: 
+    path: todo
+    repoURL: https://github.com/rggitops/argocdexamples.git
+    targetRevision: HEAD
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
