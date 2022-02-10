@@ -11,7 +11,7 @@ spec:
   source: 
     path: todo
     repoURL: https://github.com/rggitops/argocdexamples.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy: 
     automated:
       prune: true
