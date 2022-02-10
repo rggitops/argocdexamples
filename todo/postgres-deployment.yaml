@@ -17,18 +17,16 @@ spec:
     spec:
       containers:
         - name: postgresql
-          image: quay.io/redhatdemo/openshift-pgsql12-primary:centos7
+          image: postgres:12
           imagePullPolicy: Always
           ports:
             - name: tcp
               containerPort: 5432
           env:
-            - name: PG_USER_PASSWORD
+            - name: POSTGRES_PASSWORD
               value: admin
-            - name: PG_USER_NAME
+            - name: POSTGRES_USER
               value: admin
-            - name: PG_DATABASE
+            - name: POSTGRES_DB
               value: todo
-            - name: PG_NETWORK_MASK
-              value: all
 
